@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/counter_page.dart';
-import 'package:flutter_application_1/cubit/counter_cubit.dart';
+import 'package:flutter_application_1/bloc/auth_bloc.dart';
+import 'package:flutter_application_1/login_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
@@ -14,12 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) {
-        return CounterCubit();
-      },
+      create: (context) => AuthBloc(),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: CounterPage(),
+        home: LoginPage(),
       ),
     );
   }

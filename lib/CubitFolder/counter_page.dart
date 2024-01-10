@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Inc_dec_page.dart';
-import 'package:flutter_application_1/cubit/counter_cubit.dart';
+import 'package:flutter_application_1/CubitFolder/Inc_dec_page.dart';
+import 'package:flutter_application_1/CubitFolder/cubit/counter_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterPage extends StatefulWidget {
@@ -17,7 +17,7 @@ class _CounterPageState extends State<CounterPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Counter App'),
+        title: const Text('Counter App'),
       ),
       body: Center(
         child: Column(
