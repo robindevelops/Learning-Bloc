@@ -36,37 +36,62 @@ class _LoginPageState extends State<LoginPage> {
         }
       },
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 28.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Login Now ",
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue),
+        body: Center(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 28.0),
+              child: Column(
+                children: [
+                  Text(
+                    "Login Now ",
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue),
+                  ),
+                  SizedBox(height: 50),
+                  TextField(
+                    controller: email,
+                    decoration: InputDecoration(
+                      hintText: "Email",
+                      filled: true,
+                      fillColor: Color.fromARGB(255, 244, 242, 242),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  TextField(
+                    controller: password,
+                    decoration: InputDecoration(
+                      hintText: "Password",
+                      filled: true,
+                      fillColor: Color.fromARGB(255, 244, 242, 242),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      auth.add(
+                        LoginRequsted(
+                            email: email.text, password: password.text),
+                      );
+                    },
+                    child: Text("Login Now"),
+                  )
+                ],
               ),
-              SizedBox(height: 10),
-              TextField(
-                controller: email,
-                decoration: InputDecoration(hintText: "Email"),
-              ),
-              TextField(
-                controller: password,
-                decoration: InputDecoration(hintText: "Password"),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  auth.add(
-                    LoginRequsted(email: email.text, password: password.text),
-                  );
-                },
-                child: Text("Login Now"),
-              )
-            ],
+            ),
           ),
         ),
       ),
