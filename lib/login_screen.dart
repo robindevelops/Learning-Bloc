@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                     LoginRequsted(email: email.text, password: password.text),
                   );
                 },
-                child: Text("SignUp"),
+                child: Text("Login Now"),
               )
             ],
           ),
